@@ -46,9 +46,19 @@ function Select(letter) {
   //Prove that outbox can be found
   console.log(output);
   //Update the text box
-  output.value += letter;
-  
+  output.value += letter; 
 }
+//Creating if-statememt to check if the guess is found or not  
+  
+if (Fruits.includes(answer)) {
+    // Process the positive result
+    console.log("FOUND: " + answer);
+  }
+  // Otherwise the character was not found
+  else {
+    // Process the negative result
+    console.log("NOT FOUND: " + answer);
+  }
  
 
 
