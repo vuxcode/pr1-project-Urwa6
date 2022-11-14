@@ -1,0 +1,154 @@
+<h1 id ="game" > HANGMAN</h1>
+<input id ="output" output = "text">
+<button onclick="Select('A')">A</button>
+<button onclick="Select('B')">B</button>
+<button onclick="Select('C')">C</button>
+<button onclick="Select('D')">D</button>
+<button onclick="Select('E')">E</button>
+<button onclick="Select('F')">F</button>
+<button onclick="Select('G')">G</button>
+<button onclick="Select('H')">H</button>
+<button onclick="Select('I')">I</button>
+<button onclick="Select('J')">J</button>
+<button onclick="Select('K')">K</button>
+<button onclick="Select('L')">L</button>
+<button onclick="Select('M')">M</button>
+<button onclick="Select('N')">N</button>
+<button onclick="Select('O')">O</button>
+<button onclick="Select('P')">P</button>
+<button onclick="Select('Q')">Q</button>
+<button onclick="Select('R')">R</button>
+<button onclick="Select('S')">S</button>
+<button onclick="Select('T')">T</button>
+<button onclick="Select('U')">U</button>
+<button onclick="Select('V')">V</button>
+<button onclick="Select('W')">W</button>
+<button onclick="Select('X')">X</button>
+<button onclick="Select('Y')">Y</button>
+<button onclick="Select('Z')">Z</button>
+
+<script>
+
+//Creating variable at the top 
+//Creating variable for Fruits
+
+var Fruits = ["apricot", "banana", "blueberry","mango"];
+
+
+//Ask the user too guess the word
+var answer = prompt("Guess the name of fruit:");
+
+
+
+//Adding a function to get a random word from Fruits
+
+function getRandom(Fruits) {
+ Math.floor(Math.random()* Fruits.length);
+
+  //Checking if it works
+  console.log(Math.random());
+}
+
+
+
+//Adding Global variable for buttons 
+var myButton = document.getElementById("output");
+
+//Creating function so make button works on screen
+function Select(letter) {
+  //Test that current selected button works
+  console.log(letter);
+  //Prove that outbox can be found
+  console.log(output);
+
+  //Creating an if-statement to check if the letter is right
+  if (Fruits[0].includes(letter)) {
+    //process the output on the screen
+    console.log(letter)
+      //Update the text box
+  output.value += letter;
+  }
+//if the letter does not match then don't display that on the screen
+  else { console.log("wrong")
+  }
+
+}
+
+
+if (Fruits.includes(answer)) {
+    // Process the positive result
+    console.log("FOUND: " + answer);
+  }
+  // Otherwise the character was not found
+  else {
+    // Process the negative result
+    console.log("NOT FOUND: " + answer);
+  }
+// Check all the indexes in the current input 
+for (var index = 0; index < Fruits.length; index++) {
+    // Check if the character matches the input
+    if (Fruits[index] == answer) {
+      // Process the matching characters
+      console.log("MATCH: " + answer + " - " + Fruits[index]);
+      // Now we have a reference to the INDEX so we could use this to update 
+      // the information on the screen!
+    }
+    // Otherwise the input doesn't match the current character
+    else {
+      // Confirm that the program works as expected
+      console.log("NO MATCH: " + answer + " - " + Fruits[index]);
+    } 
+  }
+
+  //Create an output for the user to see how many letters the word has 
+
+  var display = "";
+  //Update the blanks according to the length of answer
+  console.log(answer[answer.length]);
+
+  for (var i = 0; i < answer.length; i++) {
+    // Then for each index we can just add an underscore to the display string
+    display += "_ ";
+    // How can we update the display for letters that have been found?...
+    if (i == Fruits[index]) {
+        //reduce the display line by one
+        display--;
+    }
+    else {
+      
+
+    }
+    // Hint: You could use this loop to create an array with "_" in each index
+    // then you could update the array when the user chooses the correct letter
+  }
+
+  // When the loop is finished you can display the result
+  console.log(display);
+  //Creating Function for Buttons
+
+
+
+  
+// var myButton = document.getElementById("Selection('')");
+// function Alphabets () {
+//   //
+//  // add the button when clicked by user
+//   answer.push("");
+//   if (answer != Fruits) {
+//     //Pop that button from the desktop
+//     answer.pop("");
+//   }
+// alert(guess);
+// }
+
+// function Selection (input) {
+//     console.log(input);
+//   }
+//  //Display the information to the user
+
+//   function display () {
+//     input = Selection();
+//     alert(input);
+//     document.addEventListener("click", display);
+//   }
+</script>
