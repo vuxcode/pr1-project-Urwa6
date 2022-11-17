@@ -43,6 +43,14 @@ console.log(answer);
 answer = answer.split("");
 //Checking that answer is an array now 
 console.log(answer);
+  //Creating function for Random word
+  function randomWord(){
+  //Creating variable for randomWord
+  var ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
+  //Checking if it works
+  console.log(ranWord);
+}
+randomWord();
 //Adding Global variable for buttons 
 var myButton = document.getElementById("output");
   //Create Function
