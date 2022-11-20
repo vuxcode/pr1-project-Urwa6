@@ -65,7 +65,7 @@ function Select(letter) {
 }
 //Creating if-statememt to check if the guess is found or not  
   
-if (Fruits.includes(answer)) {
+if (ranWord.includes(letter)) {
     // Process the positive result
     console.log("FOUND: " + answer);
   }
@@ -75,28 +75,8 @@ if (Fruits.includes(answer)) {
     console.log("NOT FOUND: " + answer);
   }
   
- 
-//Using for loop to check all the indexes in the current unput
+
   
-for (var index = 0; index < Fruits.length; index++) {
-  // Checking if the character matches the input
-    if (Fruits[index] == answer) {
-      // Process the matching characters
-      console.log("MATCH: " + answer + " - " + Fruits[index]);
-      // Now we have a reference to the INDEX so we could use this to update 
-      // the information on the screen
-    }
-    // Otherwise the input doesn't match the current character
-    else {
-      // Confirm that the program works as expected
-      console.log("NO MATCH: " + answer + " - " + Fruits[index]);
-    } 
-    
-  }
-  //Creating an output for the user to see how many letters the word has 
-  var display = "";
-  //Updating the blanks according to the length of answer
-  console.log(answer[answer.length]);
 
 
 </script>
