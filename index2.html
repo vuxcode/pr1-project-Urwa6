@@ -62,7 +62,7 @@ function Select(letter) {
   console.log(output);
   //Update the text box
   output.value += letter; 
-}
+
 //Creating if-statememt to check if the guess is found or not  
   
 if (ranWord.includes(letter)) {
@@ -74,6 +74,7 @@ if (ranWord.includes(letter)) {
     // Process the negative result
     console.log("NOT FOUND: " + answer);
   }
+}
   
 
   
