@@ -1,6 +1,3 @@
-<!-- Start writing your project code in this file! -->
-<!--Experimenting with a dark mode in HTML-->
-<meta name="color-scheme" content="dark">
 <h1 id ="game" > HANGMAN</h1>
 <input id ="output" output = "text">
 <button onclick="Select('A')">A</button>
@@ -29,55 +26,68 @@
 <button onclick="Select('X')">X</button>
 <button onclick="Select('Y')">Y</button>
 <button onclick="Select('Z')">Z</button>
-
 <script>
-//Creating variable at the top 
+//Creating variables at the top 
 //Create variable for Fruits 
-var Fruits = ["APRICOT","BANANA","BLUEBERRY","MANGO"];
+var Fruits = [ "APRICOT","BANANA","BLUEBERRY","MANGO"];
 
 //Create a variable for answer
 var answer =Fruits[2];
 //Checking if it works 
 console.log(answer);
-  //Update and convert the string into an array
+
+//Create a variable for Random word
+var ranWord;
+//Update and convert the string into an array
 answer = answer.split("");
 //Checking that answer is an array now 
 console.log(answer);
-  //Creating function for Random word
-  function randomWord(){
+//Adding random guess word
+function randomWord(){
   //Creating variable for randomWord
-  var ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
+  ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
   //Checking if it works
   console.log(ranWord);
 }
 randomWord();
+//Update and convert the string into an array 
+ranWord = ranWord.split("");
+//Checking the random word in an array now 
+console.log(ranWord);
+
+
 //Adding Global variable for buttons 
 var myButton = document.getElementById("output");
-  //Create Function
-  //Creating function for buttons to work
+//Creating Function so button works
 function Select(letter) {
-  //Test that current selected button works
+  //Test that current selected letter works
   console.log(letter);
-  //Prove that outbox can be found
+  //Prove that outbox can be found 
   console.log(output);
+
+
+ // Ask for an input
+  var input = "Enter a letter to check for:";
+//Check all the indexes in the current input
+
+  //Creating an if-statement to check if letter matches the answer 
+  if (ranWord.includes(letter)) {
+  //Process the output on the screen
+
+  //Check all the indexes in correct answer
+  for (var i = 0; i < ranWord.length; i++) {
+    if (ranWord[i] == letter) {
+      output.q
+      console.log("Found "  + ranWord[i]);
+    }
+  }
   //Update the text box
-  output.value += letter; 
-
-//Creating if-statememt to check if the guess is found or not  
-  
-if (ranWord.includes(letter)) {
-    // Process the positive result
-    console.log("FOUND: " + answer);
-  }
-  // Otherwise the character was not found
-  else {
-    // Process the negative result
-    console.log("NOT FOUND: " + answer);
-  }
+  output.value += letter;
+  //May be i need to add query selector here for words
 }
-  
 
-  
-
-
+else {
+  console.log("Not Found " + letter);
+}
+}
 </script>
