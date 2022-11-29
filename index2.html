@@ -1,5 +1,51 @@
-<h1 id ="game" > HANGMAN</h1>
-<input id ="output" output = "text">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Word-Guess</title>
+</head>
+<style>
+  body {
+   max-height: 300vh;
+   align-items: center;
+  }
+  
+  .char {
+      border: 3px solid black;
+      display: inline-block;
+      width: 80px;
+      height: 40px;
+      margin: 10px;
+      padding: 20px;
+      font-size: 36px;
+      vertical-align: top;
+    }
+    
+
+  p {
+    font-size: 19px;
+    align-items: center;
+  }
+
+  button {
+    margin-bottom: 10px;
+    height: 42px;
+    width: 38px;
+  }
+
+  button.reset {
+    width: 50px;
+    height: 30px;
+  }
+  
+
+
+
+</style>
+<body>
+  <h1>Word-Guess Game</h1>
+
+<!-- Create somewhere for the output on the screen -->
+<div id="output"></div>
 <button onclick="Select('A')">A</button>
 <button onclick="Select('B')">B</button>
 <button onclick="Select('C')">C</button>
@@ -10,7 +56,7 @@
 <button onclick="Select('H')">H</button>
 <button onclick="Select('I')">I</button>
 <button onclick="Select('J')">J</button>
-<button onclick="Select('K')">K</button>
+<button onclick="Select('K')">K</button><br>
 <button onclick="Select('L')">L</button>
 <button onclick="Select('M')">M</button>
 <button onclick="Select('N')">N</button>
@@ -21,73 +67,129 @@
 <button onclick="Select('S')">S</button>
 <button onclick="Select('T')">T</button>
 <button onclick="Select('U')">U</button>
-<button onclick="Select('V')">V</button>
+<button onclick="Select('V')">V</button><br>
 <button onclick="Select('W')">W</button>
 <button onclick="Select('X')">X</button>
 <button onclick="Select('Y')">Y</button>
 <button onclick="Select('Z')">Z</button>
+
+
+<div>
+  <button onclick="Reset()" style= width:100px; >Reset Game</button>
+</div>
 <script>
-//Creating variables at the top 
-//Create variable for Fruits 
-var Fruits = [ "APRICOT","BANANA","BLUEBERRY","MANGO"];
+  //Creating variables at the top 
+  // Create a variable and connect it to the element
+  var output = document.getElementById("output");
+  var checkLetter = document.getElementById("Select()");
+  //Create variable for Fruits 
+  var Fruits = [ "APRICOT","BANANA","BLUEBERRY","MANGO"];
+  //Create a variable for Chances
+  var chances = 10;
+  //Create a variable for answer
+  var answer =Fruits[2];
+  //Checking if it works 
+  console.log(answer);
+  
+  //Create a variable for Random word
+  var ranWord;
+  //Update and convert the string into an array
+  answer = answer.split("");
+  //Checking that answer is an array now 
+  console.log(answer);
+  
+  
+  //Adding random guess word
+  function randomWord(){
+    //Creating variable for randomWord
+    ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
+    //Checking if it works
+    console.log(ranWord);
 
-//Create a variable for answer
-var answer =Fruits[2];
-//Checking if it works 
-console.log(answer);
-
-//Create a variable for Random word
-var ranWord;
-//Update and convert the string into an array
-answer = answer.split("");
-//Checking that answer is an array now 
-console.log(answer);
-//Adding random guess word
-function randomWord(){
-  //Creating variable for randomWord
-  ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
-  //Checking if it works
-  console.log(ranWord);
-}
-randomWord();
-//Update and convert the string into an array 
-ranWord = ranWord.split("");
-//Checking the random word in an array now 
-console.log(ranWord);
-
-
-//Adding Global variable for buttons 
-var myButton = document.getElementById("output");
-//Creating Function so button works
-function Select(letter) {
-  //Test that current selected letter works
-  console.log(letter);
-  //Prove that outbox can be found 
-  console.log(output);
-
-
- // Ask for an input
-  var input = "Enter a letter to check for:";
-//Check all the indexes in the current input
-
-  //Creating an if-statement to check if letter matches the answer 
-  if (ranWord.includes(letter)) {
-  //Process the output on the screen
-
-  //Check all the indexes in correct answer
-  for (var i = 0; i < ranWord.length; i++) {
-    if (ranWord[i] == letter) {
-      output.q
-      console.log("Found "  + ranWord[i]);
-    }
+  
+ 
   }
-  //Update the text box
-  output.value += letter;
-  //May be i need to add query selector here for words
-}
+  randomWord();
+ 
+  //Update and convert the string into an array 
+  ranWord = ranWord.split("");
+  //Checking the random word in an array now 
+  console.log(ranWord);
 
-else {
-  console.log("Not Found " + letter);
-}
-}
-</script>
+
+  
+  //Adding Global variable for buttons 
+  
+  //Creating Function so button works
+  function Select(letter) {
+    //Test that current selected letter works
+    console.log(letter);
+    //Prove that outbox can be found 
+    console.log(output);
+
+      //Create an empty array for Guess
+  var guess = [];
+
+      // Use a for loop to make spaces for the user's input
+      for (var index = 0; index < ranWord.length; index++) {
+        //Update the guess on screen 
+        output.innerHTML=guess;
+    }
+
+   
+
+    
+    //Check all the indexes in correct answer
+    for (var i = 0; i < ranWord.length; i++) {
+      if (ranWord[i] == letter ) {
+      // If the letters match then store the information in the same index in the user's guess array
+       guess[i] = letter;
+      //Create blocks for each letter
+      output.innerHTML += "<div class = 'char'>" + guess[i] + "</div>";  
+      
+      console.log("Found "  + ranWord[i]);
+
+      }
+      else{
+      //Check if it works 
+      output.innerHTML += "<div class = 'char'>" + "" + "</div>";  
+            //Reduce the amount of guesses
+            chances--;
+      console.log(chances);
+      console.log("Not Found " + letter);
+     }
+   
+    }
+ 
+  }
+  
+
+  //Create a function to disable the wrong letter 
+  function checkLetter(){
+    if (i != letter){
+    letter.disabled = true;
+    }
+    else {
+      letter.disabled = false;
+    }
+    checkLetter();
+  }
+  //Create another if-statement to give an output to the user (win or loss)
+  
+    if (chances == 0) {
+  alert("You lost the game");
+    }
+
+    //Added a function for reset the game
+    function Reset () {
+    location.reload();
+  }
+
+
+  
+
+  
+
+  </script>
+</body>
+</html>
