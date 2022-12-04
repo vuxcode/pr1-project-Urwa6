@@ -4,20 +4,29 @@
   <title>Word-Guess</title>
 </head>
 <style>
-  body {
-   max-height: 300vh;
-   align-items: center;
+  html {
+    background-color: cadetblue;
+    background-size: cover;
+  }
+
+  h1{
+    text-align: center;
   }
   
   .char {
       border: 3px solid black;
+      border-top-color: rgb(43, 223, 226);
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+      border-block-color: grey;
       display: inline-block;
-      width: 80px;
-      height: 40px;
+      width: 40px;
+      height: 30px;
       margin: 10px;
       padding: 20px;
       font-size: 36px;
-      vertical-align: top;
+      text-align: center;
+      ;
     }
     
 
@@ -27,14 +36,29 @@
   }
 
   button {
+    border-block: unset;
+    border-radius: 10px;
     margin-bottom: 10px;
+    background-color: rgb(249, 210, 111);
     height: 42px;
-    width: 38px;
+    width: 54px;
+  }
+  button:hover {
+    background-color: darkcyan;
+
+  }
+  button:active {
+    background-color: black;
   }
 
   button.reset {
     width: 50px;
     height: 30px;
+  }
+
+  div {
+    width: 160vh;
+    background-color: rgb(82, 162, 164);
   }
   
 
@@ -43,36 +67,40 @@
 </style>
 <body>
   <h1>Word-Guess Game</h1>
+  <div>
+    <button id="fruit" onclick="fruit()" style="width: 90px;">FRUIT</button>
+    <button id="animal" onclick="animal()" style="width: 90px;">ANIMAL</button>
+    <button id="country" onclick="country()" style="width: 90px">COUNTRY</button>
 
-<!-- Create somewhere for the output on the screen -->
-<div id="output"></div>
-<button onclick="Select('A')">A</button>
-<button onclick="Select('B')">B</button>
-<button onclick="Select('C')">C</button>
-<button onclick="Select('D')">D</button>
-<button onclick="Select('E')">E</button>
-<button onclick="Select('F')">F</button>
-<button onclick="Select('G')">G</button>
-<button onclick="Select('H')">H</button>
-<button onclick="Select('I')">I</button>
-<button onclick="Select('J')">J</button>
-<button onclick="Select('K')">K</button><br>
-<button onclick="Select('L')">L</button>
-<button onclick="Select('M')">M</button>
-<button onclick="Select('N')">N</button>
-<button onclick="Select('O')">O</button>
-<button onclick="Select('P')">P</button>
-<button onclick="Select('Q')">Q</button>
-<button onclick="Select('R')">R</button>
-<button onclick="Select('S')">S</button>
-<button onclick="Select('T')">T</button>
-<button onclick="Select('U')">U</button>
-<button onclick="Select('V')">V</button><br>
-<button onclick="Select('W')">W</button>
-<button onclick="Select('X')">X</button>
-<button onclick="Select('Y')">Y</button>
-<button onclick="Select('Z')">Z</button>
-
+    <!-- Create somewhere for the output on the screen -->
+    <div id="output"></div>
+    <button id="A" onclick="Select('A')">A</button>
+    <button id="B" onclick="Select('B')">B</button>
+    <button id="C" onclick="Select('C')">C</button>
+    <button id="D" onclick="Select('D')">D</button>
+    <button id="E" onclick="Select('E')">E</button>
+    <button id="F" onclick="Select('F')">F</button>
+    <button id="G" onclick="Select('G')">G</button>
+    <button id="H" onclick="Select('H')">H</button>
+    <button id="I" onclick="Select('I')">I</button>
+    <button id="J" onclick="Select('J')">J</button>
+    <button id="K" onclick="Select('K')">K</button><br>
+    <button id="L" onclick="Select('L')">L</button>
+    <button id="M" onclick="Select('M')">M</button>
+    <button id="N" onclick="Select('N')">N</button>
+    <button id="O" onclick="Select('O')">O</button> 
+    <button id="P" onclick="Select('P')">P</button>
+    <button id="Q" onclick="Select('Q')">Q</button>
+    <button id="R" onclick="Select('R')">R</button>
+    <button id="S" onclick="Select('S')">S</button>
+    <button id="T" onclick="Select('T')">T</button>
+    <button id="U" onclick="Select('U')">U</button>
+    <button id="V" onclick="Select('V')">V</button><br>
+    <button id="W" onclick="Select('W')">W</button>
+    <button id="X" onclick="Select('X')">X</button>
+    <button id="Y" onclick="Select('Y')">Y</button>
+    <button id="Z" onclick="Select('Z')">Z</button>
+</div>
 
 <div>
   <button onclick="Reset()" style= width:100px; >Reset Game</button>
@@ -82,32 +110,31 @@
   // Create a variable and connect it to the element
   var output = document.getElementById("output");
   var checkLetter = document.getElementById("Select()");
+  var myButton = document.getElementById(output);
+  var guess = "";
+  
   //Create variable for Fruits 
   var Fruits = [ "APRICOT","BANANA","BLUEBERRY","MANGO"];
   //Create a variable for Chances
   var chances = 10;
-  //Create a variable for answer
-  var answer =Fruits[2];
-  //Checking if it works 
-  console.log(answer);
-  
+  //Create an empty array for Guess
+   var guess = [];
+
   //Create a variable for Random word
   var ranWord;
-  //Update and convert the string into an array
-  answer = answer.split("");
-  //Checking that answer is an array now 
-  console.log(answer);
-  
-  
+
   //Adding random guess word
   function randomWord(){
     //Creating variable for randomWord
     ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
+    // USing a for loop to make blocks according to the length of word
+    for(var i = 0; i < ranWord.length; i++) {
+      // Update blocks on the screen
+      output.innerHTML += "<div class = 'char'>" + i + "</div>"; 
+    }
     //Checking if it works
     console.log(ranWord);
-
-  
- 
+       
   }
   randomWord();
  
@@ -117,9 +144,6 @@
   console.log(ranWord);
 
 
-  
-  //Adding Global variable for buttons 
-  
   //Creating Function so button works
   function Select(letter) {
     //Test that current selected letter works
@@ -127,16 +151,17 @@
     //Prove that outbox can be found 
     console.log(output);
 
-      //Create an empty array for Guess
-  var guess = [];
 
+ 
       // Use a for loop to make spaces for the user's input
       for (var index = 0; index < ranWord.length; index++) {
         //Update the guess on screen 
         output.innerHTML=guess;
+       
     }
 
    
+ 
 
     
     //Check all the indexes in correct answer
@@ -145,7 +170,12 @@
       // If the letters match then store the information in the same index in the user's guess array
        guess[i] = letter;
       //Create blocks for each letter
-      output.innerHTML += "<div class = 'char'>" + guess[i] + "</div>";  
+      output.innerHTML += "<div class = 'char'>" + guess[i]+ "</div>";  
+      //Store the letter 
+    
+      //And store the first guessed letter in a display too
+      if (guess[i] = letter) {
+      }
       
       console.log("Found "  + ranWord[i]);
 
@@ -162,18 +192,9 @@
     }
  
   }
-  
 
-  //Create a function to disable the wrong letter 
-  function checkLetter(){
-    if (i != letter){
-    letter.disabled = true;
-    }
-    else {
-      letter.disabled = false;
-    }
-    checkLetter();
-  }
+
+ 
   //Create another if-statement to give an output to the user (win or loss)
   
     if (chances == 0) {
