@@ -110,15 +110,14 @@
   // Create a variable and connect it to the element
   var output = document.getElementById("output");
   var checkLetter = document.getElementById("Select()");
-  var myButton = document.getElementById(output);
-  var guess = "";
+  var myButton = document.getElementById("output");
+  var guess = [];
   
   //Create variable for Fruits 
   var Fruits = [ "APRICOT","BANANA","BLUEBERRY","MANGO"];
   //Create a variable for Chances
   var chances = 10;
-  //Create an empty array for Guess
-   var guess = [];
+
 
   //Create a variable for Random word
   var ranWord;
@@ -127,11 +126,16 @@
   function randomWord(){
     //Creating variable for randomWord
     ranWord = Fruits[Math.floor(Math.random() * Fruits.length)];
-    // USing a for loop to make blocks according to the length of word
-    for(var i = 0; i < ranWord.length; i++) {
-      // Update blocks on the screen
-      output.innerHTML += "<div class = 'char'>" + i + "</div>"; 
+    //Add a for loop for each index
+    for (var i = 0; i < ranWord.length; i++) {
+    //Add an empty string for each indexes 
+    guess.push("");
     }
+  
+    //USing the update function 
+    Update();
+    // USing a for loop to make blocks according to the length of word
+ 
     //Checking if it works
     console.log(ranWord);
        
@@ -153,53 +157,55 @@
 
 
  
-      // Use a for loop to make spaces for the user's input
-      for (var index = 0; index < ranWord.length; index++) {
-        //Update the guess on screen 
-        output.innerHTML=guess;
-       
-    }
-
-   
  
-
     
     //Check all the indexes in correct answer
     for (var i = 0; i < ranWord.length; i++) {
-      if (ranWord[i] == letter ) {
+
+        //Create an statement to check if the letter includes or not 
+      if (ranWord[i].includes(letter)) {
       // If the letters match then store the information in the same index in the user's guess array
        guess[i] = letter;
-      //Create blocks for each letter
-      output.innerHTML += "<div class = 'char'>" + guess[i]+ "</div>";  
-      //Store the letter 
-    
-      //And store the first guessed letter in a display too
-      if (guess[i] = letter) {
+       console.log(letter);
       }
-      
-      console.log("Found "  + ranWord[i]);
-
-      }
-      else{
-      //Check if it works 
-      output.innerHTML += "<div class = 'char'>" + "" + "</div>";  
-            //Reduce the amount of guesses
-            chances--;
+      else {
+     //Reduce the amount of guesses
+      chances--;
       console.log(chances);
       console.log("Not Found " + letter);
+        
+      if (chances == 0) {
+      alert("You lost the game");
      }
-   
+
+     }
+    
     }
+    Update();
+
  
   }
+ //Create a function to update the letter on the screen 
+ function Update() {
+    //Store an empty string in the output 
+    output.innerHTML = "";
+    //Creating a for loop  for each letter 
+    for(var i= 0; i < ranWord.length; i++){
+        //Create blocks for each letter
+        output.innerHTML += "<div class = 'char'>" + guess[i]+ "</div>"; 
 
+    }
+
+ }
+ //Creating a function to deactivate the letter after clicked once 
+ function dis() {
+  if(Button == ) {
+
+  }
+ }
 
  
   //Create another if-statement to give an output to the user (win or loss)
-  
-    if (chances == 0) {
-  alert("You lost the game");
-    }
 
     //Added a function for reset the game
     function Reset () {
