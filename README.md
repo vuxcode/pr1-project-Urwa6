@@ -2,18 +2,25 @@
 # Project Instructions
 Follow the instructions here: https://vuxcode.netlify.app/new/pr1/lessons/major-project-brief/
 
-REMEMBER TO "COMMIT" YOUR CHANGES REGULARLY TO SHOW HOW YOU HAVE BUILT THIS PROJECT! 
-
-The final program is not the goal! The aim of the project is to show how you have developed your program, the steps you have taken and the problems you have solved!
-
 # Project Notes
 
 > You can use this section of the file to keep notes about your project as you work on it.
 
 # Project Summary
 
-> Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 
+> I wanted to make Word-Guess Game by using only what we have learned in this course so far. A simple Word-Guess game with three categories 
+and user can choose which option they want to guess.  
+In a start it felt like it would be so easy to make a program but it really needed full attention.
+
+> If i had more time i would make Hangman too.
+> I did stick to the budget. 
+
 
 # User Guide
 
 > Write a clear user guide for how someone should use your program.
+> Hey User, You can Play game with me here.
+> Firstly, you have to select the category so you can guess any word from that category. 
+> You will have five chances for wrong letters.
+> If you changed your mind and want to guess another word not the present one.. So you can do it by simply clicking on Reset Button.
+> 
