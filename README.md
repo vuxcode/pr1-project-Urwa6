@@ -10,7 +10,7 @@ Follow the instructions here: https://vuxcode.netlify.app/new/pr1/lessons/major-
 
 > I wanted to make Word-Guess Game by using only what we have learned in this course so far. A simple Word-Guess game with three categories 
 and user can choose which option they want to guess.  
-In a start it felt like it would be so easy to make a program but it really needed full attention.
+In a start it felt like it would be so easy to make a program but it really needed full attention and alot of thninking and help from Colin.
 
 > If i had more time i would make Hangman too.
 > I did stick to the budget. 
@@ -19,8 +19,7 @@ In a start it felt like it would be so easy to make a program but it really need
 # User Guide
 
 > Write a clear user guide for how someone should use your program.
-> Hey User, You can Play game with me here.
+> Hey User, You can Play guess game here.
 > Firstly, you have to select the category so you can guess any word from that category. 
 > You will have five chances for wrong letters.
 > If you changed your mind and want to guess another word not the present one.. So you can do it by simply clicking on Reset Button.
-> 
