@@ -1,19 +1,261 @@
-<!-- Start writing your project code in this file! -->
-<!--Experimenting with a dark mode in HTML-->
-<meta name="color-scheme" content="dark">¨
-<h1 id ="game" > HANGMAN</h1>
-<button onclick="myFunction()">Fruits</button>
-<button onclick="myFunction()">Animals</button>
-<button onclick="myFunction()">Places</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word-Guess</title>
+</head>
+  <body>
+  <h1>Word-Guess Game</h1>
+  <div id="output" class="option" style="text-align: center;">SELECT ONE CATEGORY TO GUESS A WORD FROM</div>
+    <div id="menu">
+      <button id="fruit" onclick="randomWord(0)" style="width: 90px;">FRUIT</button>
+      <button id="animal" onclick="randomWord(1)" style="width: 90px;">ANIMAL</button>
+      <button id="country" onclick="randomWord(2)" style="width: 90px">COUNTRY</button>
+    </div>
+
+    <!-- Create somewhere for the output on the screen -->
+
+    <div id="Game">
+    <!-- Add a button to hide the menu -->
+    <button id="start" onclick="start()" style="width: 150px;">Start the Game</button>
+    <div id="Chances" class="Lives">Remaining Guesses</div>
+    <div id="Alphabets">
+    <button id="A" onclick="Select('A')">A</button>
+    <button id="B" onclick="Select('B')">B</button>
+    <button id="C" onclick="Select('C')">C</button>
+    <button id="D" onclick="Select('D')">D</button>
+    <button id="E" onclick="Select('E')">E</button>
+    <button id="F" onclick="Select('F')">F</button>
+    <button id="G" onclick="Select('G')">G</button>
+    <button id="H" onclick="Select('H')">H</button>
+    <button id="I" onclick="Select('I')">I</button>
+    <button id="J" onclick="Select('J')">J</button>
+    <button id="K" onclick="Select('K')">K</button>
+    <button id="L" onclick="Select('L')">L</button>
+    <button id="M" onclick="Select('M')">M</button>
+    <button id="N" onclick="Select('N')">N</button>
+    <button id="O" onclick="Select('O')">O</button> 
+    <button id="P" onclick="Select('P')">P</button>
+    <button id="Q" onclick="Select('Q')">Q</button>
+    <button id="R" onclick="Select('R')">R</button>
+    <button id="S" onclick="Select('S')">S</button>
+    <button id="T" onclick="Select('T')">T</button>
+    <button id="U" onclick="Select('U')">U</button>
+    <button id="V" onclick="Select('V')">V</button>
+    <button id="W" onclick="Select('W')">W</button>
+    <button id="X" onclick="Select('X')">X</button>
+    <button id="Y" onclick="Select('Y')">Y</button>
+    <button id="Z" onclick="Select('Z')">Z</button>
+</div>
+</div>
+  <div>
+    <button onclick="Reset()" style= width:100px; >Reset Game</button>
+  </div>
+    <div class="container flex">
+    <div class="left_side gallows">
+      <div class="crossbarOne"></div>
+      <div class="floor"></div>
+      <div class="crossbar"></div>
+      <div class="post">
+          <div class="deadguy head"></div>
+          <div class="deadguy body">
+              <div class="deadguy right-arm"></div>
+              <div class="deadguy left-arm"></div>
+              <div class="deadguy left-leg"></div>
+              <div class="deadguy right-leg"></div>
+          </div>
+      </div>
+   </div>
 <script>
-//Creating variables
-//Asking the user to select one option 
-  var options = prompt("What do you want to guess: Fruit, Animal or Place?");
-  console.log("options");
-//Confirming the user about their selection
-  alert(options);
-  document.write();
+  //Creating variables at the top 
+  // Create a variable and connect it to the element
+  var output = document.getElementById("output");
+  var checkLetter = document.getElementById("Select()");
+  var myButton = document.getElementById("output");
+  var guess = [];
+  var menu = document.getElementById("menu");
+  var Chances = document.getElementById("Chances");
+  var game = document.getElementById("Game");
+  var option = document.getElementById("option");
+
+
+  //Track the user choice 
+  var userschoice= option;
+
+
+  //Create variable for Fruits 
+  var Fruits = [ "APRICOT","BANANA","BLUEBERRY","MANGO"];
+  var Animals =[ "MONKEY","ELEPHANT","TIGER","PENGUIN"];
+  var Country =[ "PAKISTAN","UNITEDSTATES","COSOWO","QATAR"];
+   //Create a varaible for each category 
+ var category = [Fruits, Animals, Country];
+//disappear the alphabets from the screen
+Alphabets.style.display = "none";
+ //Create a function to get a menu 
+ function start() {
+  //Display the alphabets after the user selected any category
+  Alphabets.style.display = "block" ;
+
+ }
+
+ // Create function to set the user's choice
+ function choice(option){
+  //Update the option 
+  userschoice = option;
+  //Test that it works 
+  console.log(userschoice);
+
+ }
+
+ //Create a variable for Chances
+  var chances = 5;
+  //Check if category works
+  console.log(category[2][3]);
+
+  //Create a variable for Random word
+  var ranWord;
+
+
+
+  //Adding random guess word
+  function randomWord(Choose){
+    //Creating variable for randomWord
+    ranWord = category[Choose][Math.floor(Math.random() * Fruits.length)];
+    //Check if it works
+    console.log(Choose);
+    //Add a for loop for each index
+    for (var i = 0; i < ranWord.length; i++) {
+    //Add an empty string for each indexes 
+    guess.push("");
+    }
+  
+    //USing the update function 
+    Update();
+  
+ 
+    //Checking if it works
+    console.log(ranWord);
+  //Update and convert the string into an array 
+  ranWord = ranWord.split("");
+  //Checking the random word in an array now 
+  console.log(ranWord);   
+    //Confirm the choice on the screen 
+    output.innerHTML = "The user chose option " + Choose;
+
+  }
+
+
+
+
+  //Creating Function so button works
+  function Select(letter) {
+    //Test that current selected letter works
+    console.log(letter);
+    //Prove that outbox can be found 
+    console.log(output);
+    disableButton(letter);
+
+ 
+ //Create an if-statement to check if the letter includes 
+ if (ranWord.includes(letter)) {
+    
+     //Check all the indexes in correct answer
+     for (var i = 0; i < ranWord.length; i++) {
+
+        //Create an statement to check if the letter includes or not 
+      if (ranWord[i] == (letter)) {
+      // If the letters match then store the information in the same index in the user's guess array
+       guess[i] = letter;
+       console.log(letter);
+      }
+      
+
+     }
+     //Here we are going to make them in an array again so that we can check that the letter matches 
+     if (ranWord.join() == guess.join()) {
+      console.log("Does " + ranWord.join() + "matches " + guess.join() + "?");
+      var Alphabets = document.getElementById("Alphabets");
+      Alphabets.innerHTML = '<h1>Congratulations! You Won.</h1>';
+    }
+
+    
+    }
+ 
+    
+ 
+ else {
+     //Reduce the amount of guesses
+      chances--;
+      console.log(chances);
+      console.log("Not Found " + letter);
+      //Update the chances on screen 
+      Chances == chances;
+      //Confirm the chances on the screen 
+      Chances.innerHTML = "You have  " + chances + " chances left.";
+ }
+ Update();
+
+
+ 
+  }
+        
+
+
+ 
+  
+ //Create a function to update the letter on the screen 
+ function Update() {
+    //Store an empty string in the output 
+    output.innerHTML = "";
+    //Creating a for loop  for each letter 
+    for(var i= 0; i < ranWord.length; i++){
+        //Create blocks for each letter
+        output.innerHTML += "<div class = 'char'>" + guess[i]+ "</div>"; 
+
+    }
+    
+  }
+
+  
+    
+    //Creating a function to deactivate the letter after clicked once 
+// Create function to disable button
+function disableButton(letter) {
+  // Confirm that the button has been clicked
+  console.log("CLICKED!");
+  
+  // Create a variable and Find the element by its ID
+  var button = document.getElementById(letter);
+  // Check in the console if the button can be found
+  // console.dir(button);
+
+  
+  // Disable the button using the variable name and the disabled property
+  button.disabled = true;
+  
+  //Find the game element 
+  var Game = document.getElementById("Game");
+  //Adding a if-statement to check if chances are zero
+  if(chances == 0) {
+  //Replace the content with message 
+  Game.innerHTML = '<h1>Game Over</h1>';
+}
+
+}
+
+
+    //Added a function for reset the game
+    function Reset () {
+    location.reload();
+  }
+
+
+
   
 
   
-</script>
+
+  </script>
+</body>
+</html>
