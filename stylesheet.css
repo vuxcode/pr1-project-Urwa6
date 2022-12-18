@@ -1,1 +1,194 @@
 
+  html {
+    background-color: cadetblue;
+    background-size: cover;
+    display: flex;
+  }
+  body{
+    display: block;
+    text-align: center;
+    
+  }
+
+  h1{
+    text-align: center;
+  }
+  .option{
+    text-align: center;
+  }
+  
+  .char {
+      border: 3px solid black;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+      border-top-color: grey;
+      border-bottom-color: grey;
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+      margin: 10px;
+      padding: 20px;
+      font-size: 36px;
+      text-align: center;
+      ;
+    }
+    
+
+  p {
+    font-size: 19px;
+    align-items: center;
+  }
+
+  button {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(249, 210, 111);
+    height: 42px;
+    width: 54px;
+    text-align: center;
+  }
+  button:hover {
+    background-color: darkcyan;
+
+  }
+  button:active {
+    background-color: black;
+  }
+
+  button.reset {
+    width: 50px;
+    height: 30px;
+  }
+
+  div {
+    width: 160vh;
+    background-color: rgb(82, 162, 164);
+
+  }
+  .container {
+  width: 80%;
+  margin:auto;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: right;
+}
+
+.space {
+  width: 120px;
+}
+
+.right_side {
+  width: 500px;
+}
+
+.gallows {
+  position: relative;
+}
+
+.post {
+  width: 5px;
+  height: 200px;
+  background-color: #666;
+}
+
+.crossbar {
+  width: 80px;
+  height: 5px;
+  background-color: #666;
+}
+
+.crossbarOne {
+  width: 4px;
+  height: 40px;
+  background-color: #666;
+  position: relative;
+  left: 73px;
+  top: 50px;
+  border-radius: 25px;
+}
+
+.floor {
+  width: 30vh;
+  height: 6px;
+  background-color: #666;
+  position: relative;
+  top: 210px;
+  left: -30px;
+  border-radius: 25px;
+}
+
+.head {
+  position: relative;
+  left: 63px;
+  top: 30px;
+  width: 25px;
+  height: 25px;
+  background:  rgb(249, 210, 111);
+  border-radius: 30px;
+}
+
+.body {
+  position: relative;
+  width: 6px;
+  height: 50px;
+  left: 73px;
+  top: 20px;
+  border-radius: 25px;
+  background-color:  rgb(249, 210, 111);
+}
+
+.right-arm {
+  position: relative;
+  width: 5px;
+  height: 30px;
+  left: 10px;
+  top: 10px;
+  border-radius: 25px;
+  background-color:  rgb(249, 210, 111);
+  transform: rotate(-45deg);
+}
+
+.left-arm {
+  position: relative;
+  width: 5px;
+  height: 30px;
+  left: -9px;
+  top: -20px;
+  border-radius: 25px;
+  background-color:  rgb(249, 210, 111);
+  transform: rotate(45deg);
+}
+
+.right-leg {
+  position: relative;
+  width: 5px;
+  height: 40px;
+  left: 12px;
+  top: -58px;
+  border-radius: 25px;
+  background-color:  rgb(249, 210, 111);
+  transform: rotate(-35deg);
+}
+
+.left-leg {
+  position: relative;
+  width: 5px;
+  height: 40px;
+  left: -11px;
+  top: -18px;
+  border-radius: 25px;
+  background-color:  rgb(249, 210, 111);
+  transform: rotate(35deg);
+}
+.Lives {
+  border-radius: 25px;
+  font-size: x-large;
+  font-weight: 800;
+  text-align: center;
+}
+  
