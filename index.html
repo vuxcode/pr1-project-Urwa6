@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylesheet.css">
   <title>Word-Guess</title>
 </head>
-  <body>
+<style>
+  html {
+    background-color: cadetblue;
+    background-size: cover;
+    display: flex;
+  }
+  body{
+    display: block;
+    text-align: center;
+    
+  }
+
+  h1{
+    text-align: center;
+    text-shadow: 0 0 5px #ffee10;
+     font-size: 180%;
+     color: black;
+     box-shadow: 0 0 10px grey;
+  }
+  .option{
+    text-align: center;
+  }
+  
+  .char {
+      border: 3px solid black;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+      border-top-color: grey;
+      border-bottom-color: grey;
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+      margin: 10px;
+      padding: 20px;
+      font-size: 36px;
+      text-align: center;
+      ;
+    }
+    
+
+  p {
+    font-size: 19px;
+    align-items: center;
+  }
+
+  button {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(249, 210, 111);
+    height: 42px;
+    width: 54px;
+    text-align: center;
+  }
+  button:hover {
+    background-color: darkcyan;
+
+  }
+  button:active {
+    background-color: black;
+  }
+
+  button.reset {
+    width: 50px;
+    height: 30px;
+  }
+
+  div {
+    width: 160vh;
+    background-color: rgb(82, 162, 164);
+
+  }
+
+
+  
+
+
+
+</style>
+<body>
   <h1>Word-Guess Game</h1>
   <div id="output" class="option" style="text-align: center;">SELECT ONE CATEGORY TO GUESS A WORD FROM</div>
     <div id="menu">
@@ -50,24 +127,9 @@
     <button id="Z" onclick="Select('Z')">Z</button>
 </div>
 </div>
-  <div>
-    <button onclick="Reset()" style= width:100px; >Reset Game</button>
-  </div>
-    <div class="container flex">
-    <div class="left_side gallows">
-      <div class="crossbarOne"></div>
-      <div class="floor"></div>
-      <div class="crossbar"></div>
-      <div class="post">
-          <div class="deadguy head"></div>
-          <div class="deadguy body">
-              <div class="deadguy right-arm"></div>
-              <div class="deadguy left-arm"></div>
-              <div class="deadguy left-leg"></div>
-              <div class="deadguy right-leg"></div>
-          </div>
-      </div>
-   </div>
+<div>
+  <button onclick="Reset()" style= width:100px; >Reset Game</button>
+
 <script>
   //Creating variables at the top 
   // Create a variable and connect it to the element
@@ -79,6 +141,7 @@
   var Chances = document.getElementById("Chances");
   var game = document.getElementById("Game");
   var option = document.getElementById("option");
+
 
 
   //Track the user choice 
@@ -108,6 +171,9 @@ Alphabets.style.display = "none";
   console.log(userschoice);
 
  }
+
+
+
 
  //Create a variable for Chances
   var chances = 5;
@@ -141,14 +207,12 @@ Alphabets.style.display = "none";
   ranWord = ranWord.split("");
   //Checking the random word in an array now 
   console.log(ranWord);   
-  
-   //Confirm the choice on the screen 
-    //If the user select Fruits
+    //Confirm the choice on the screen 
     if (Choose == 0){
       //Give output on the screen 
       menu.innerText="YOU HAVE SELECTED FRUITS"
     }
-   //IF user select Animals
+
     else if (Choose == 1) {
             //Give output on the screen 
             menu.innerText="YOU HAVE SELECTED ANIMALS"
@@ -158,7 +222,9 @@ Alphabets.style.display = "none";
     else{
     menu.innerHTML= "YOU HAVE SELECTED COUNTRY";
   }
+  
 
+ 
   }
 
 
@@ -203,6 +269,7 @@ Alphabets.style.display = "none";
  else {
      //Reduce the amount of guesses
       chances--;
+    
       console.log(chances);
       console.log("Not Found " + letter);
       //Update the chances on screen 
@@ -215,6 +282,8 @@ Alphabets.style.display = "none";
 
  
   }
+
+
         
 
 
@@ -255,7 +324,8 @@ function disableButton(letter) {
   //Adding a if-statement to check if chances are zero
   if(chances == 0) {
   //Replace the content with message 
-  Game.innerHTML = '<h1>Game Over</h1>';
+  Game.innerHTML = '<h1>Game Over</h1>' + "The word was " + ranWord;
+
 }
 
 }
