@@ -14,7 +14,8 @@ In a start it felt like it would be so easy to make a program but it really need
 
 > If i had more time i would make Hangman too:- Now i added a hangman too but unfortunately i don't have time to make it work rightnow before submission.
 > I did stick to the budget. 
-
+Now i feel so proud of myself that i had noll knowledge of Programming before and Now i have built a game which is more than wow. 
+THANKS to you Colin that you helped me alot in getting things straight. 
 
 # User Guide
 
