@@ -142,8 +142,22 @@ Alphabets.style.display = "none";
   //Checking the random word in an array now 
   console.log(ranWord);   
   
-  //Confirm the choice on the screen 
-    menu.innerHTML= "You have selected " + (Choose);
+   //Confirm the choice on the screen 
+    //If the user select Fruits
+    if (Choose == 0){
+      //Give output on the screen 
+      menu.innerText="YOU HAVE SELECTED FRUITS"
+    }
+   //IF user select Animals
+    else if (Choose == 1) {
+            //Give output on the screen 
+            menu.innerText="YOU HAVE SELECTED ANIMALS"
+
+    }
+
+    else{
+    menu.innerHTML= "YOU HAVE SELECTED COUNTRY";
+  }
 
   }
 
