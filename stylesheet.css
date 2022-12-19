@@ -11,7 +11,12 @@
   }
 
   h1{
+    
     text-align: center;
+    text-shadow: 0 0 5px #ffee10;
+    font-size: 180%;
+    color: black;
+    box-shadow: 0 0 10px grey;
   }
   .option{
     text-align: center;
