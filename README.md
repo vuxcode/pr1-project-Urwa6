@@ -12,7 +12,7 @@ Follow the instructions here: https://vuxcode.netlify.app/new/pr1/lessons/major-
 and user can choose which option they want to guess.  
 In a start it felt like it would be so easy to make a program but it really needed full attention and alot of thninking and help from Colin.
 
-> If i had more time i would make Hangman too.
+> If i had more time i would make Hangman too:- Now i added a hangman too but unfortunately i don't have time to make it work rightnow before submission.
 > I did stick to the budget. 
 
 
